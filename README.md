@@ -6,16 +6,16 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 
 # Hardware Setup
 * 3x 3,7V 18650 
- * in series (11,1V) 
+  * in series (11,1V) 
 * nodemcu
- * remember to disconnect the batteries before you hook up USB cable!!!
+  * remember to disconnect the batteries before you hook up USB cable!!!
 * arcade button LED (12V)
 
 ![](nodemcu-buttons-wifi.jpg)
 
 * wifi access point
- * ssid & password must be hard coded in .ino file
- * also acts as mqttbroker
+  * ssid & password must be hard coded in .ino file
+  * also acts as mqttbroker
 * small computer which runs unity3d
 * projector mapping an ape shape
 
@@ -27,13 +27,13 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 Two ways to transmit the buttonstateinfo...
 
 ## Wifi Client
-* nodemcu connects as client to wifi access point
- * no long wires needed for buttons
- * needs power supply
- * needs separate wifi ap
+nodemcu connects as client to wifi access point
+* no long wires needed for buttons
+* needs power supply
+* needs separate wifi ap
+
 ## USB
- * no extra power supply needed for nodemcu
- * unity probably just reads with 9600 baudrate
+* no extra power supply needed for nodemcu
 
 
 # Software
@@ -47,8 +47,8 @@ Two ways to transmit the buttonstateinfo...
 ### nodemcu as simple http server
 * fetching data in unity via http
 * send requests from pc multiple times a second 
- * works with upto 30 requests per second
- * `time for i in {1..1000}; do curl -s --url http://172.16.0.135/buttons; done`
+  * works with upto 30 requests per second
+  * `time for i in {1..1000}; do curl -s --url http://172.16.0.135/buttons; done`
 * https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html
 * https://github.com/andyburke/UnityHTTP
 
@@ -59,22 +59,22 @@ Two ways to transmit the buttonstateinfo...
 ### mqtt messages via broker
 * the IoT way of sending messages, fast and without overhead
 * needs a broker like "mosquitto"
- * available for linux, windows and openwrt
+  * available for linux, windows and openwrt
 * mqtt clients
- * arduino
-  * https://pubsubclient.knolleary.net/ -- pubsubclient
-   * https://github.com/gonzalo123/mqtt_example
-  * mqttclient
- * python
-  * paho-mqtt 
-  * https://github.com/sumnerboy12/mqtt-gpio-monitor/blob/master/mqtt-gpio-monitor.py    
- * micropython
-  * umqtt.simple micropython client
-* https://github.com/gonzalo123/mqtt_example
- * unity
-  * https://github.com/vovacooper/Unity3d_MQTT
-  * https://m2mqtt4unity.codeplex.com
-  * http://www.hivemq.com/blog/mqtt-client-library-encyclopedia-m2mqtt
+  * arduino
+    * https://pubsubclient.knolleary.net/ -- pubsubclient
+    * https://github.com/gonzalo123/mqtt_example
+    * mqttclient
+  * python
+    * paho-mqtt 
+    * https://github.com/sumnerboy12/mqtt-gpio-monitor/blob/master/mqtt-gpio-monitor.py    
+  * micropython
+    * umqtt.simple micropython client
+    * https://github.com/gonzalo123/mqtt_example
+  * unity
+    * https://github.com/vovacooper/Unity3d_MQTT
+    * https://m2mqtt4unity.codeplex.com
+    * http://www.hivemq.com/blog/mqtt-client-library-encyclopedia-m2mqtt
 
 #### mqtt broker on debian stretch
 ```
