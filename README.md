@@ -10,6 +10,9 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 * nodemcu
  * remember to disconnect the batteries before you hook up USB cable!!!
 * arcade button LED (12V)
+
+![](nodemcu-buttons-wifi.jpg)
+
 * wifi access point
  * ssid & password must be hard coded in .ino file
  * also acts as mqttbroker
@@ -71,12 +74,15 @@ Two ways to transmit the buttonstateinfo...
  * unity
   * https://github.com/vovacooper/Unity3d_MQTT
   * https://m2mqtt4unity.codeplex.com
+  * http://www.hivemq.com/blog/mqtt-client-library-encyclopedia-m2mqtt
+
 #### mqtt broker on debian stretch
 ```
 aptitude install mosquitto
 cp path_to_this_git/mosquitto.conf /etc/mosquitto/conf.d/
 mosquitto_sub -d -h localhost -t "buttons" -t "node"
 ```
+
 #### mqtt broker on openwrt
 ```
 opkg update; opkg install mosquitto-nossl
