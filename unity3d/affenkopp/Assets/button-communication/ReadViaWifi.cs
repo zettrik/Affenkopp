@@ -5,13 +5,14 @@ using UnityEngine.Networking;
 public class ReadViaWifi : MonoBehaviour {
     void Start() {
         StartCoroutine(GetText());
+        Debug.unityLogger.Log("hello");
     }
  
     IEnumerator GetText() {
-        UnityWebRequest www = UnityWebRequest.Get("http://172.16.0.135/buttons");
+        UnityWebRequest www = UnityWebRequest.Get("http://192.168.1.1/buttons");
         yield return www.Send();
  
-        if(www.isError) {
+        if(www.isNetworkError) {
             Debug.Log(www.error);
         }
         else {

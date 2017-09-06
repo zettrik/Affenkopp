@@ -1,3 +1,4 @@
+/*
 using UnityEngine;
 using System.Collections;
 using System.IO.Ports;
@@ -24,3 +25,4 @@ public class ReadViaUSB : MonoBehaviour {
         }
     }
 }
+*/
