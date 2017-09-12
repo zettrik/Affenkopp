@@ -5,22 +5,30 @@ This project is about reading button states with a nodemcu and use the values
 in unity3d for fun and fame and the whole family. Push the buttons to control mapped eyes of an ape.
 
 # Hardware Setup
-* 3x 3,7V 18650 
+* 3x 3,7V 18650 (from old notebook batteries)
   * in series (11,1V) 
-* nodemcu
+  * battery case
+* 1x nodemcu (8€)
   * remember to disconnect the batteries before you hook up USB cable!!!
-* arcade button LED (12V)
+* 2x arcade buttons with LEDs (3€ each)
+* 2x 22kOhm resistor
+
+### optional for battery monitoring
+* 330kOhm + 22kOhm resistor (voltage divider)
+* 1x mini LED Voltmeter 3-30V (3€)
 
 ![](nodemcu-buttons-wifi.jpg)
 
 * wifi access point
-  * ssid & password must be hard coded in .ino file
+  * its ssid & password must be hard coded in .ino file
   * also acts as mqttbroker
 * small computer which runs unity3d
 * projector mapping an ape shape
 
 ## Buttons
 * easy as: https://www.arduino.cc/en/tutorial/button
+* button 1 & 2 at nodemcu D1 & D2
+* LED inside button are wired straight to batteries (7-12V)
 
 
 # Connection
