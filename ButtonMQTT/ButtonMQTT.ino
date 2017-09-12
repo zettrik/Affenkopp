@@ -12,9 +12,9 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char *ssid = "b0r7";
-const char *password = "youknowabetterone";
-const char* mqtt_server = "172.16.0.1";
+const char* ssid = "b0r7";
+const char* password = "";
+const char* mqtt_server = "192.168.1.1";
 const int mqtt_port = 1883;
 const int button1 = 5; // nodemcu pin: D1
 const int button2 = 4; // nodemcu pin: D2
@@ -138,15 +138,17 @@ void loop() {
   
   // poll still alive messages
   // millis() will start again from 0 about every 50 days
+  /*
   if ((unsigned long)(now - before) >= 10000) {
     before = now;
     mqtt_pub("node", "Affenkopp still alive :)");
-    snprintf (mqtt_message, 75, "%01d, %01d, %ld", button1_state, button2_state, now);
+    snprintf (mqtt_message, 75, "%01d,%01d,%ld", button1_state, button2_state, now);
     mqtt_pub("buttons", mqtt_message);
   }
+  */
   if (button1_state != button1_state_last) {
     button1_state_last = button1_state;
-    snprintf (mqtt_message, 75, "%01d, %01d, %ld", button1_state, button2_state, now);
+    snprintf (mqtt_message, 75, "%01d,%01d,%ld", button1_state, button2_state, now);
     mqtt_pub("buttons", mqtt_message);
   }
   else if (button2_state != button2_state_last) {
