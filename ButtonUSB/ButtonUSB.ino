@@ -31,11 +31,13 @@ void loop() {
   
   if ((button1_state - button1_state_last) <= -100) {
     Serial.println(1);
+    Serial.flush();
     //Serial.println(button1_state);
     digitalWrite(led1, 0);
   }
   if ((button1_state - button1_state_last) >= 100) {
     Serial.println(0);
+    Serial.flush();
     //Serial.println(button1_state);
     digitalWrite(led1, 0);
   }
