@@ -11,9 +11,9 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 * 1x nodemcu (8€)
   * remember to disconnect the batteries before you hook up USB cable!!!
 * 2x arcade buttons with LEDs (3€ each)
-* 2x 22kOhm resistor
+* 2x 1kOhm resistor
 
-### optional for battery monitoring
+## Optional For Battery Monitoring
 * 330kOhm + 22kOhm resistor (voltage divider)
 * 1x mini LED Voltmeter 3-30V (3€)
 
@@ -30,6 +30,14 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 * button 1 & 2 at nodemcu D1 & D2
 * LED inside button are wired straight to batteries (7-12V)
 
+## Protection, Voltage Regulator
+* https://www.rugged-circuits.com/10-ways-to-destroy-an-arduino/
+* http://www.esp8266.com/viewtopic.php?f=13&t=8889
+* https://tinker.yeoman.com.au/2016/05/29/running-nodemcu-on-a-battery-esp8266-low-power-consumption-revisited/
+
+## Sleep Mode
+330-1kOhm resistor between GPIO16 and RESET
+* https://blog.falafel.com/esp8266nodemcu-deep-sleep/
 
 # Connection
 Two ways to transmit the buttonstateinfo...
@@ -52,7 +60,7 @@ nodemcu connects as client to wifi access point
 * http://answers.unity3d.com/questions/179311/unity-to-arduino.html
 * https://www.youtube.com/watch?v=9SYt4MDSAro
 
-### nodemcu as simple http server
+### Nodemcu As Simple HTTP Server
 * fetching data in unity via http
 * send requests from pc multiple times a second 
   * works with upto 30 requests per second
@@ -60,11 +68,11 @@ nodemcu connects as client to wifi access point
 * https://docs.unity3d.com/Manual/UnityWebRequest-RetrievingTextBinaryData.html
 * https://github.com/andyburke/UnityHTTP
 
-### nodemcu as http client, webserver on pc/unity?
+### Nodemcu As HTTP Client, Webserver On PC/Unity?
 * request a url if button is pressed
 * https://www.myelectronicslab.com/tutorial/door-sensor-with-push-notification-using-esp8266-nodemcu/
 
-### mqtt messages via broker
+### MQTT Messages Via Broker
 * the IoT way of sending messages, fast and without overhead
 * needs a broker like "mosquitto"
   * available for linux, windows and openwrt
@@ -84,21 +92,21 @@ nodemcu connects as client to wifi access point
     * https://m2mqtt4unity.codeplex.com
     * http://www.hivemq.com/blog/mqtt-client-library-encyclopedia-m2mqtt
 
-#### mqtt broker on debian stretch
+#### MQTT Broker On Debian Stretch
 ```
 aptitude install mosquitto
 cp path_to_this_git/mosquitto.conf /etc/mosquitto/conf.d/
 mosquitto_sub -d -h localhost -t "buttons" -t "node"
 ```
 
-#### mqtt broker on openwrt
+#### MQTT Broker On Openwrt
 ```
 opkg update; opkg install mosquitto-nossl
 vi /etc/mosquitto/mosquitto.conf
 ```
 * https://github.com/remakeelectric/owrt_pub_feeds
 
-### websockets
+### Websockets
 * http://www.instructables.com/id/Esp8266Websockets-RGB-LED-controller/
 * https://github.com/ghtomcat/ArduinoWebsocketServer
 * https://forum.unity3d.com/threads/unity5-beta-webgl-unity-websockets-plug-in.277567/
