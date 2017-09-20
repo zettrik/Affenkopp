@@ -16,6 +16,8 @@
 
 const char* ssid = "";
 const char* password = "";
+const char* ssid = "BC5";
+const char* password = "Pass4BC5Komplex";
 const char* mqtt_server = "172.16.1.141";
 const int mqtt_port = 1883;
 const int button1 = 5; // nodemcu pin: D1
@@ -34,7 +36,6 @@ int analog_in_sum = 0;
 unsigned long now = 0;
 unsigned long before = 0;
 char mqtt_message[60];
-float middle;
 
 IPAddress local_ip(127,0,0,0); // will be set via dhcp
 
@@ -144,7 +145,7 @@ void check_battery() {
   */
   
   //analog_in = analogRead(A0);
-  analog_in = multiple_read(3);
+  analog_in = multiple_read(5);
   
   // warn about high power and wait a second
   if (analog_in >= 51) {
@@ -171,10 +172,10 @@ float multiple_read(int times) {
   analog_in_sum = 0;
   for(int i = 0; i < times; i++) {
     delay(3);
-    analog_in_sum = analog_in_sum + analogRead(A0); // one read lasts about 100µs
+    analog_in_sum += analogRead(A0); // one read lasts about 100µs
     }
-  middle = analog_in_sum / times;
-  return middle;
+  analog_in_sum /= times;
+  return analog_in_sum;
 }
 
 
