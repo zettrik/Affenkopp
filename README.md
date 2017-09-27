@@ -114,3 +114,15 @@ vi /etc/mosquitto/mosquitto.conf
 
 ## Unity on Linux
 https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.350256/
+
+# Power Consumption @ 3.3V
+* NodeMCU in wifi station mode 90mA
+* NodeMCU with wifi suspended 40mA
+* 7-segemnt voltmeter 12mA
+* LED in button 35mA (12V)
+
+## li-ion accu
+* high voltage 4.2V
+* low voltage 2.75V
+
+
