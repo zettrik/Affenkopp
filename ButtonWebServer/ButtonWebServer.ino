@@ -31,8 +31,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-const char *ssid = "b0r7";
-const char *password = "youknowabetterone";
+const char *ssid = "your wifi ssid";
+const char *password = "your wifi pw";
 const int button1 = 5; // nodemcu pin: D1
 const int button2 = 4; // nodemcu pin: D2
 const int led1 = 16; // built in LED and D0

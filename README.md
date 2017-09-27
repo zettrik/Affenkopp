@@ -4,6 +4,8 @@ Affenkopp
 This project is about reading button states with a nodemcu and use the values
 in unity3d for fun and fame and the whole family. Push the buttons to control mapped eyes of an ape.
 
+![](nodemcu-buttons-wifi-batmon.png)
+
 # Hardware Setup
 * 3x 3,7V 18650 (from old notebook batteries)
   * in series (11,1V) 
@@ -17,7 +19,6 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 * 330kOhm + 22kOhm resistor (voltage divider)
 * 1x mini LED Voltmeter 3-30V (3€)
 
-![](nodemcu-buttons-wifi.jpg)
 
 * wifi access point
   * its ssid & password must be hard coded in .ino file
@@ -38,6 +39,8 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 ## Sleep Mode
 330-1kOhm resistor between GPIO16 and RESET
 * https://blog.falafel.com/esp8266nodemcu-deep-sleep/
+
+![](nodemcu-buttons-wifi.jpg)
 
 # Connection
 Two ways to transmit the buttonstateinfo...

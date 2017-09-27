@@ -14,10 +14,8 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char* ssid = "";
-const char* password = "";
-const char* ssid = "BC5";
-const char* password = "Pass4BC5Komplex";
+const char* ssid = "your wifi ssid";
+const char* password = "your wifi pw";
 const char* mqtt_server = "172.16.1.141";
 const int mqtt_port = 1883;
 const int button1 = 5; // nodemcu pin: D1

@@ -3,8 +3,8 @@
 #include <WebSocketsServer.h>
 #include <Hash.h>
 WebSocketsServer webSocket = WebSocketsServer(81);
-const char* ssid     = "your ssid";
-const char* password = "your password";
+const char* ssid     = "your wifi ssid";
+const char* password = "your wifi pw";
 const int bluePin = 13;
 const int redPin = 15;
 const int greenPin = 12;
