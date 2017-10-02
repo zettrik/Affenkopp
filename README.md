@@ -8,7 +8,7 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 
 # Hardware Setup
 * 3x 3,7V 18650 (from old notebook batteries)
-  * in series (11,1V) 
+  * in series (11,1V max. 12,8V) 
   * battery case
 * 1x nodemcu (8€)
   * remember to disconnect the batteries before you hook up USB cable!!!
@@ -20,11 +20,13 @@ in unity3d for fun and fame and the whole family. Push the buttons to control ma
 * 1x mini LED Voltmeter 3-30V (3€)
 
 
-* wifi access point
-  * its ssid & password must be hard coded in .ino file
-  * also acts as mqttbroker
-* small computer which runs unity3d
-* projector mapping an ape shape
+## wifi access point
+* its ssid & password must be hard coded in .ino file
+* also acts as mqttbroker
+
+## Small Computer Which Runs Unity3d
+
+## Projector Mapping An Ape Shape
 
 ## Buttons
 * easy as: https://www.arduino.cc/en/tutorial/button
@@ -121,7 +123,7 @@ https://forum.unity3d.com/threads/unity-on-linux-release-notes-and-known-issues.
 # Power Consumption @ 3.3V
 * NodeMCU in wifi station mode 90mA
 * NodeMCU with wifi suspended 40mA
-* 7-segemnt voltmeter 12mA
+* 7-segment voltmeter 12mA
 * LED in button 35mA (12V)
 
 ## li-ion accu
